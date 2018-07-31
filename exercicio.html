@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SmartTraining - Exercicios</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+</head>
+<body>
+	<div>
+		<table>
+			<% for(int i = 0; i < exercicios.size; i++){
+			<th>
+				<td>
+					<% exercicios.get(i).getName(); %>
+				</td>
+			</th>
+			}%>
+		</table>
+	</div>
+</body>
+</html>

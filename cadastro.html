@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>SmartTraining - Cadastrar</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script>
+function formatar(mascara, documento){
+  var i = documento.value.length;
+  var saida = mascara.substring(0,1);
+  var texto = mascara.substring(i)
+  
+  if (texto.substring(0,1) != saida){
+            documento.value += texto.substring(0,1);
+  }
+  
+}
+</script>
 </head>
 <body>
 	<div class="container">
 		<br>
-		<h2>SmartTraining</h2>
+		<h2>SmartTraining - Cadastrar</h2>
 		<br>
 		<form>	
-			<label for="username" class="form">Nome de usuário: </label>
-			<input type="text" name="username" class="form-control">
+			<label for="nome">Nome: </label>
+			<input type="text" name="nome" class="form-control">
 			<br>
-
-			<label for="senha" class="form">Senha:</label>
+ 
+			<label for="senha">Senha:</label>
 			<input type="password" name="senha" class="form-control">
 			<br>
 
-			<label for="senhaRepetida" class="form">Repita a senha:</label>
+			<label for="senhaRepetida">Repita a senha:</label>
 			<input type="password" name="senhaRepetida" class="form-control">
 			<br>
 
-			<input type="radio" class="form" name="tipoConta" value="coordenador">Coordenador<br>
-			<input type="radio" class="form" name="tipoConta" value="instrutor">Instrutor<br>
-			<input type="radio" class="form" name="tipoConta" value="aluno">Aluno<br><br>
+			<label for="cpf">CPF: </label>
+			<input type="text" name="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" class="form-control">
+			<br>
+
+			<label for="email">Email: </label>
+			<input type="email" name="email" class="form-control">
+			<br>
+
+			<label for="datNasc">Data de Nascimento: </label>
+			<input type="date" name="datNasc" class="form-control">
+			<br>
+
+			Você é um:<br>
+			<input type="radio" name="tipoConta" value="instrutor">Instrutor<br>
+			<input type="radio" name="tipoConta" value="aluno">Aluno<br><br>
 
 			<input type="submit" name="Cadastrar" class="btn btn-primary" value="Cadastrar">
-			<button class="btn btn-primary">Login</button>
+			<input type="button" name="login" class="btn btn-primary" value="Login">
+
 		</form>
-	</div>
+	</div><br>
 </body>
 </html>
